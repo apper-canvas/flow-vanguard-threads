@@ -1,0 +1,303 @@
+[
+  {
+    "Id": 1,
+    "name": "Premium Oxford Dress Shirt",
+    "category": "shirts",
+    "subcategory": "dress-shirts",
+    "price": 89.99,
+    "originalPrice": 119.99,
+    "description": "Crafted from premium 100% cotton Oxford cloth, this dress shirt features a classic spread collar and French placket for a refined, professional look.",
+    "images": [
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1564257577104-340d8b6b7d2f?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1595218407556-4a95e5b03064?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name": "White", "code": "#FFFFFF" },
+      { "name": "Blue", "code": "#3b82f6" },
+      { "name": "Navy", "code": "#1f2937" }
+    ],
+    "material": "100% Premium Cotton Oxford",
+    "careInstructions": "Machine wash cold, hang dry, iron on medium heat",
+    "inStock": true,
+    "stockCount": 50,
+    "rating": 4.8,
+    "reviewCount": 127
+  },
+  {
+    "Id": 2,
+    "name": "Slim Fit Chino Pants",
+    "category": "pants",
+    "subcategory": "chinos",
+    "price": 79.99,
+    "description": "Modern slim-fit chinos tailored from premium stretch cotton twill. Features flat front styling and clean-finished seams for a contemporary silhouette.",
+    "images": [
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1506629905607-676c7829fb89?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1445646997725-4208b24d0e8a?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["28", "30", "32", "34", "36", "38"],
+    "colors": [
+      { "name": "Navy", "code": "#1f2937" },
+      { "name": "Gray", "code": "#6b7280" },
+      { "name": "Brown", "code": "#92400e" }
+    ],
+    "material": "97% Cotton, 3% Elastane",
+    "careInstructions": "Machine wash warm, tumble dry low, iron as needed",
+    "inStock": true,
+    "stockCount": 35,
+    "rating": 4.6,
+    "reviewCount": 89
+  },
+  {
+    "Id": 3,
+    "name": "Wool Blend Blazer",
+    "category": "jackets",
+    "subcategory": "blazers",
+    "price": 199.99,
+    "originalPrice": 249.99,
+    "description": "Sophisticated wool blend blazer with a modern fit. Features notched lapels, two-button closure, and working buttonholes on the sleeves.",
+    "images": [
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1594938384816-48d8b85bc8c8?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name": "Charcoal", "code": "#374151" },
+      { "name": "Navy", "code": "#1f2937" },
+      { "name": "Brown", "code": "#92400e" }
+    ],
+    "material": "60% Wool, 35% Polyester, 5% Elastane",
+    "careInstructions": "Dry clean only",
+    "inStock": true,
+    "stockCount": 20,
+    "rating": 4.9,
+    "reviewCount": 156
+  },
+  {
+    "Id": 4,
+    "name": "Casual Cotton Polo",
+    "category": "shirts",
+    "subcategory": "polo-shirts",
+    "price": 49.99,
+    "description": "Classic three-button polo crafted from soft cotton pique. Perfect for casual occasions with its comfortable fit and timeless design.",
+    "images": [
+      "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1564257577104-340d8b6b7d2f?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name": "White", "code": "#FFFFFF" },
+      { "name": "Navy", "code": "#1f2937" },
+      { "name": "Green", "code": "#059669" },
+      { "name": "Red", "code": "#dc2626" }
+    ],
+    "material": "100% Cotton Pique",
+    "careInstructions": "Machine wash cold, tumble dry low",
+    "inStock": true,
+    "stockCount": 75,
+    "rating": 4.4,
+    "reviewCount": 67
+  },
+  {
+    "Id": 5,
+    "name": "Premium Leather Belt",
+    "category": "accessories",
+    "subcategory": "belts",
+    "price": 69.99,
+    "description": "Handcrafted genuine leather belt with brushed metal buckle. Available in classic colors to complement any wardrobe.",
+    "images": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1594650891322-c90e8654c62b?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608080207799-a1a8ba1cef1b?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["32", "34", "36", "38", "40"],
+    "colors": [
+      { "name": "Black", "code": "#000000" },
+      { "name": "Brown", "code": "#92400e" }
+    ],
+    "material": "100% Genuine Leather",
+    "careInstructions": "Clean with leather conditioner, store in dust bag",
+    "inStock": true,
+    "stockCount": 40,
+    "rating": 4.7,
+    "reviewCount": 92
+  },
+  {
+    "Id": 6,
+    "name": "Merino Wool Sweater",
+    "category": "jackets",
+    "subcategory": "casual-jackets",
+    "price": 129.99,
+    "description": "Luxurious merino wool crewneck sweater with ribbed cuffs and hem. Soft, lightweight, and perfect for layering.",
+    "images": [
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1605408499873-b179bb8c2e6a?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1581566727797-86dc4c0a8ece?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name": "Gray", "code": "#6b7280" },
+      { "name": "Navy", "code": "#1f2937" },
+      { "name": "Green", "code": "#059669" }
+    ],
+    "material": "100% Merino Wool",
+    "careInstructions": "Hand wash in cold water, lay flat to dry",
+    "inStock": true,
+    "stockCount": 25,
+    "rating": 4.8,
+    "reviewCount": 134
+  },
+  {
+    "Id": 7,
+    "name": "Classic Denim Jeans",
+    "category": "pants",
+    "subcategory": "jeans",
+    "price": 99.99,
+    "originalPrice": 129.99,
+    "description": "Premium denim jeans with a classic straight fit. Made from selvedge denim with contrast stitching and vintage-inspired details.",
+    "images": [
+      "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["28", "30", "32", "34", "36"],
+    "colors": [
+      { "name": "Indigo", "code": "#4c1d95" },
+      { "name": "Black", "code": "#000000" }
+    ],
+    "material": "100% Cotton Selvedge Denim",
+    "careInstructions": "Machine wash inside out in cold water, hang dry",
+    "inStock": true,
+    "stockCount": 30,
+    "rating": 4.5,
+    "reviewCount": 78
+  },
+  {
+    "Id": 8,
+    "name": "Silk Dress Tie",
+    "category": "accessories",
+    "subcategory": "ties",
+    "price": 39.99,
+    "description": "Elegant silk necktie with subtle pattern. Handcrafted from premium silk with perfect width and length for professional styling.",
+    "images": [
+      "https://images.unsplash.com/photo-1594736797933-d0c5a25f1845?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1607084838706-e4d8da2d36a6?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["Regular"],
+    "colors": [
+      { "name": "Navy", "code": "#1f2937" },
+      { "name": "Red", "code": "#dc2626" },
+      { "name": "Blue", "code": "#3b82f6" }
+    ],
+    "material": "100% Silk",
+    "careInstructions": "Dry clean only, store hanging",
+    "inStock": true,
+    "stockCount": 60,
+    "rating": 4.6,
+    "reviewCount": 45
+  },
+  {
+    "Id": 9,
+    "name": "Quilted Vest",
+    "category": "jackets",
+    "subcategory": "vests",
+    "price": 89.99,
+    "description": "Lightweight quilted vest perfect for layering. Features a water-resistant shell and warm synthetic insulation.",
+    "images": [
+      "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1581566727797-86dc4c0a8ece?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1594650891322-c90e8654c62b?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name": "Navy", "code": "#1f2937" },
+      { "name": "Black", "code": "#000000" },
+      { "name": "Gray", "code": "#6b7280" }
+    ],
+    "material": "100% Nylon Shell with Synthetic Insulation",
+    "careInstructions": "Machine wash cold, tumble dry low",
+    "inStock": true,
+    "stockCount": 18,
+    "rating": 4.3,
+    "reviewCount": 52
+  },
+  {
+    "Id": 10,
+    "name": "Cotton Dress Shorts",
+    "category": "pants",
+    "subcategory": "shorts",
+    "price": 59.99,
+    "description": "Tailored cotton shorts with a 9-inch inseam. Perfect for warm weather with their breathable fabric and classic styling.",
+    "images": [
+      "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1506629905607-676c7829fb89?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["28", "30", "32", "34", "36"],
+    "colors": [
+      { "name": "Navy", "code": "#1f2937" },
+      { "name": "Khaki", "code": "#a3a3a3" },
+      { "name": "White", "code": "#FFFFFF" }
+    ],
+    "material": "100% Cotton Twill",
+    "careInstructions": "Machine wash warm, tumble dry medium",
+    "inStock": true,
+    "stockCount": 45,
+    "rating": 4.4,
+    "reviewCount": 38
+  },
+  {
+    "Id": 11,
+    "name": "Leather Wallet",
+    "category": "accessories",
+    "subcategory": "wallets",
+    "price": 79.99,
+    "description": "Handcrafted leather bifold wallet with multiple card slots and bill compartment. Made from premium full-grain leather.",
+    "images": [
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1606107557214-6e5e1d2eae8d?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608080207799-a1a8ba1cef1b?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name": "Black", "code": "#000000" },
+      { "name": "Brown", "code": "#92400e" }
+    ],
+    "material": "Full-Grain Leather",
+    "careInstructions": "Clean with leather conditioner as needed",
+    "inStock": true,
+    "stockCount": 35,
+    "rating": 4.7,
+    "reviewCount": 83
+  },
+  {
+    "Id": 12,
+    "name": "Casual Linen Shirt",
+    "category": "shirts",
+    "subcategory": "casual-shirts",
+    "price": 69.99,
+    "description": "Relaxed-fit linen shirt perfect for casual occasions. Features mother-of-pearl buttons and a comfortable, breathable weave.",
+    "images": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1564257577104-340d8b6b7d2f?w=400&h=500&fit=crop&auto=format"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name": "White", "code": "#FFFFFF" },
+      { "name": "Blue", "code": "#3b82f6" },
+      { "name": "Green", "code": "#059669" }
+    ],
+    "material": "100% Linen",
+    "careInstructions": "Machine wash cold, line dry, iron while damp",
+    "inStock": false,
+    "stockCount": 0,
+    "rating": 4.2,
+    "reviewCount": 29
+  }
+]
