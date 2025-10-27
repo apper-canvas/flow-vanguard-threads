@@ -2,39 +2,43 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import { addToWishlist, isInWishlist, removeFromWishlist } from "@/services/api/wishlistService";
+import { addToWishlist, checkIsInWishlist, isInWishlist, removeFromWishlist } from "@/services/api/wishlistService";
 import ApperIcon from "@/components/ApperIcon";
 import Badge from "@/components/atoms/Badge";
-const ProductCard = ({ product, onWishlistToggle }) => {
+ 
+export function ProductCard({ product, onWishlistToggle }) {
   const [isInWishlist, setIsInWishlist] = useState(false);
-useEffect(() => {
-    setIsInWishlist(isInWishlist(product.Id));
-    
+  
+  useEffect(() => {
     const handleWishlistUpdate = () => {
-      setIsInWishlist(isInWishlist(product.Id));
+      setIsInWishlist(checkIsInWishlist(product.id));
     };
+    
+    // Initialize wishlist state
+    handleWishlistUpdate();
     
     window.addEventListener('wishlist_updated', handleWishlistUpdate);
     
     return () => {
       window.removeEventListener('wishlist_updated', handleWishlistUpdate);
     };
-  }, [product.Id]);
-
+  }, [product.id]);
   const handleWishlistClick = (e, product) => {
     e.preventDefault();
     e.stopPropagation();
     
-    if (isInWishlist) {
-      removeFromWishlist(product.Id);
+if (isInWishlist) {
+      removeFromWishlist(product.id);
+      setIsInWishlist(false);
       toast.success(`Removed ${product.name} from wishlist`);
     } else {
       addToWishlist(product);
+      setIsInWishlist(true);
       toast.success(`Added ${product.name} to wishlist`);
     }
-    
+ 
     if (onWishlistToggle) {
-      onWishlistToggle(product.Id, !isInWishlist);
+      onWishlistToggle(product.id, !isInWishlist);
     }
   };
 
@@ -47,9 +51,9 @@ useEffect(() => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
 whileHover={{ y: -4 }}
-      className="product-card bg-white rounded-sm shadow-sm hover:shadow-lg transition-all duration-120 ease-out group relative"
+className="product-card bg-white rounded-sm shadow-sm hover:shadow-lg transition-all duration-120 ease-out group relative"
     >
-      <Link to={`/product/${product.Id}`} className="block">
+      <Link to={`/product/${product.id}`} className="block">
         <div className="relative aspect-[4/5] overflow-hidden rounded-t-sm">
           <img
             src={product.images[0]}
