@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import { addToWishlist, checkWishlist, removeFromWishlist } from "@/services/api/wishlistService";
+import { addToWishlist, isInWishlist, removeFromWishlist } from "@/services/api/wishlistService";
 import ApperIcon from "@/components/ApperIcon";
 import Badge from "@/components/atoms/Badge";
 const ProductCard = ({ product, onWishlistToggle }) => {
   const [isInWishlist, setIsInWishlist] = useState(false);
-
-  useEffect(() => {
-    setIsInWishlist(checkWishlist(product.Id));
+useEffect(() => {
+    setIsInWishlist(isInWishlist(product.Id));
     
     const handleWishlistUpdate = () => {
-      setIsInWishlist(checkWishlist(product.Id));
+      setIsInWishlist(isInWishlist(product.Id));
     };
     
     window.addEventListener('wishlist_updated', handleWishlistUpdate);
