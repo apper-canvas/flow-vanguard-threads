@@ -4,34 +4,45 @@ import { motion, AnimatePresence } from "framer-motion"
 import ApperIcon from "@/components/ApperIcon"
 import SearchBar from "@/components/molecules/SearchBar"
 import { getCartItems } from "@/services/api/cartService"
-
+import { getWishlistItems } from "@/services/api/wishlistService"
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [cartCount, setCartCount] = useState(0)
+const [cartCount, setCartCount] = useState(0)
+  const [wishlistCount, setWishlistCount] = useState(0)
   const navigate = useNavigate()
 
-  useEffect(() => {
+useEffect(() => {
     const updateCartCount = () => {
       const items = getCartItems()
       const totalItems = items.reduce((sum, item) => sum + item.quantity, 0)
       setCartCount(totalItems)
     }
     
-    updateCartCount()
+    const updateWishlistCount = () => {
+      const items = getWishlistItems()
+      setWishlistCount(items.length)
+    }
     
-    // Listen for cart updates
+    updateCartCount()
+    updateWishlistCount()
+    
+    // Listen for cart and wishlist updates
     const handleStorageChange = (e) => {
       if (e.key === 'cart_items') {
         updateCartCount()
+      } else if (e.key === 'wishlist_items') {
+        updateWishlistCount()
       }
     }
     
     window.addEventListener('storage', handleStorageChange)
     window.addEventListener('cart_updated', updateCartCount)
+    window.addEventListener('wishlist_updated', updateWishlistCount)
     
     return () => {
       window.removeEventListener('storage', handleStorageChange)
       window.removeEventListener('cart_updated', updateCartCount)
+      window.removeEventListener('wishlist_updated', updateWishlistCount)
     }
   }, [])
 
@@ -104,10 +115,18 @@ const Header = () => {
 
           {/* Action Icons */}
           <div className="flex items-center space-x-4">
-            <button className="p-2 text-charcoal hover:text-bronze transition-colors">
+<Link 
+              to="/wishlist" 
+              className="p-2 text-charcoal hover:text-bronze transition-colors relative"
+              aria-label="Wishlist"
+            >
               <ApperIcon name="Heart" size={20} />
-            </button>
-            
+              {wishlistCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-bronze text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  {wishlistCount}
+                </span>
+              )}
+            </Link>
             <Link 
               to="/cart" 
               className="relative p-2 text-charcoal hover:text-bronze transition-colors"

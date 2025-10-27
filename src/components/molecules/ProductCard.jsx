@@ -1,20 +1,54 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
-import ApperIcon from "@/components/ApperIcon"
-import Badge from "@/components/atoms/Badge"
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import { addToWishlist, checkWishlist, removeFromWishlist } from "@/services/api/wishlistService";
+import ApperIcon from "@/components/ApperIcon";
+import Badge from "@/components/atoms/Badge";
+const ProductCard = ({ product, onWishlistToggle }) => {
+  const [isInWishlist, setIsInWishlist] = useState(false);
 
-const ProductCard = ({ product }) => {
+  useEffect(() => {
+    setIsInWishlist(checkWishlist(product.Id));
+    
+    const handleWishlistUpdate = () => {
+      setIsInWishlist(checkWishlist(product.Id));
+    };
+    
+    window.addEventListener('wishlist_updated', handleWishlistUpdate);
+    
+    return () => {
+      window.removeEventListener('wishlist_updated', handleWishlistUpdate);
+    };
+  }, [product.Id]);
+
+  const handleWishlistClick = (e, product) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (isInWishlist) {
+      removeFromWishlist(product.Id);
+      toast.success(`Removed ${product.name} from wishlist`);
+    } else {
+      addToWishlist(product);
+      toast.success(`Added ${product.name} to wishlist`);
+    }
+    
+    if (onWishlistToggle) {
+      onWishlistToggle(product.Id, !isInWishlist);
+    }
+  };
+
   const discountPercentage = product.originalPrice 
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
-    : 0
+    : 0;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4 }}
-      className="product-card bg-white rounded-sm shadow-sm hover:shadow-lg transition-all duration-120 ease-out group"
+whileHover={{ y: -4 }}
+      className="product-card bg-white rounded-sm shadow-sm hover:shadow-lg transition-all duration-120 ease-out group relative"
     >
       <Link to={`/product/${product.Id}`} className="block">
         <div className="relative aspect-[4/5] overflow-hidden rounded-t-sm">
@@ -37,9 +71,17 @@ const ProductCard = ({ product }) => {
               <Badge variant="error">Out of Stock</Badge>
             </div>
           )}
-          <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-            <button className="p-2 bg-white/90 rounded-full shadow-sm hover:bg-white transition-colors">
-              <ApperIcon name="Heart" size={16} className="text-charcoal" />
+<div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+            <button 
+              onClick={(e) => handleWishlistClick(e, product)}
+              className="p-2 bg-white/90 rounded-full shadow-sm hover:bg-white transition-colors"
+              aria-label="Add to wishlist"
+            >
+              <ApperIcon 
+                name="Heart" 
+                size={16} 
+                className={isInWishlist ? "text-error fill-error" : "text-charcoal"}
+              />
             </button>
           </div>
         </div>

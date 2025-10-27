@@ -7,7 +7,7 @@ import Select from "@/components/atoms/Select"
 import ProductGrid from "@/components/organisms/ProductGrid"
 import ProductFilters from "@/components/organisms/ProductFilters"
 import { getProducts } from "@/services/api/productService"
-
+import { isInWishlist } from "@/services/api/wishlistService"
 const Products = () => {
   const { category } = useParams()
   const [searchParams, setSearchParams] = useSearchParams()
@@ -247,11 +247,12 @@ const Products = () => {
 
           {/* Products Grid */}
           <div className="flex-1">
-            <ProductGrid
+<ProductGrid
               products={filteredProducts}
               loading={loading}
               error={error}
               onRetry={loadProducts}
+              onWishlistToggle={() => {}}
             />
           </div>
         </div>

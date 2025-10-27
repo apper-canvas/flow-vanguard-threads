@@ -11,7 +11,7 @@ import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import { getProductById, getProducts } from "@/services/api/productService";
 import { addToCart } from "@/services/api/cartService";
-
+import { isInWishlist as checkWishlist, addToWishlist, removeFromWishlist } from "@/services/api/wishlistService";
 const ProductDetail = () => {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -23,11 +23,26 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(0)
   const [selectedSize, setSelectedSize] = useState("")
   const [selectedColor, setSelectedColor] = useState("")
-  const [quantity, setQuantity] = useState(1)
-
-  useEffect(() => {
+const [quantity, setQuantity] = useState(1)
+  const [isInWishlist, setIsInWishlist] = useState(false)
+useEffect(() => {
     loadProduct()
+    loadWishlistState()
   }, [id])
+
+  const loadWishlistState = () => {
+    setIsInWishlist(checkWishlist(parseInt(id)))
+    
+    const handleWishlistUpdate = () => {
+      setIsInWishlist(checkWishlist(parseInt(id)))
+    }
+    
+    window.addEventListener('wishlist_updated', handleWishlistUpdate)
+    
+    return () => {
+      window.removeEventListener('wishlist_updated', handleWishlistUpdate)
+    }
+  }
 
   const loadProduct = async () => {
     try {
@@ -55,7 +70,7 @@ const ProductDetail = () => {
     }
   }
 
-  const handleAddToCart = () => {
+const handleAddToCart = () => {
     if (!selectedSize) {
       toast.error("Please select a size")
       return
@@ -87,6 +102,16 @@ const ProductDetail = () => {
   const handleBuyNow = () => {
     handleAddToCart()
     navigate("/cart")
+  }
+
+  const handleWishlistToggle = () => {
+    if (isInWishlist) {
+      removeFromWishlist(product.Id)
+      toast.success(`Removed ${product.name} from wishlist`)
+    } else {
+      addToWishlist(product)
+      toast.success(`Added ${product.name} to wishlist`)
+    }
   }
 
   if (loading) {
@@ -187,9 +212,17 @@ const ProductDetail = () => {
               <div className="flex items-start justify-between mb-2">
                 <h1 className="text-3xl lg:text-4xl font-display font-bold text-charcoal">
                   {product.name}
-                </h1>
-                <button className="p-2 text-charcoal hover:text-bronze transition-colors">
-                  <ApperIcon name="Heart" size={24} />
+</h1>
+                <button 
+                  onClick={handleWishlistToggle}
+                  className="p-2 text-charcoal hover:text-bronze transition-colors"
+                  aria-label={isInWishlist ? "Remove from wishlist" : "Add to wishlist"}
+                >
+                  <ApperIcon 
+                    name="Heart" 
+                    size={24} 
+                    className={isInWishlist ? "fill-error text-error" : ""}
+                  />
                 </button>
               </div>
               
