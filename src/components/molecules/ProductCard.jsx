@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import { addToWishlist, checkIsInWishlist, isInWishlist, removeFromWishlist } from "@/services/api/wishlistService";
+import { addToWishlist, isInWishlist, removeFromWishlist } from "@/services/api/wishlistService";
 import ApperIcon from "@/components/ApperIcon";
 import Badge from "@/components/atoms/Badge";
  
 export function ProductCard({ product, onWishlistToggle }) {
-  const [isInWishlist, setIsInWishlist] = useState(false);
+const [inWishlist, setInWishlist] = useState(false);
   
   useEffect(() => {
-    const handleWishlistUpdate = () => {
-      setIsInWishlist(checkIsInWishlist(product.id));
+const handleWishlistUpdate = () => {
+      setInWishlist(isInWishlist(product.id));
     };
     
     // Initialize wishlist state
@@ -27,18 +27,18 @@ export function ProductCard({ product, onWishlistToggle }) {
     e.preventDefault();
     e.stopPropagation();
     
-if (isInWishlist) {
+if (inWishlist) {
       removeFromWishlist(product.id);
-      setIsInWishlist(false);
+      setInWishlist(false);
       toast.success(`Removed ${product.name} from wishlist`);
     } else {
       addToWishlist(product);
-      setIsInWishlist(true);
+      setInWishlist(true);
       toast.success(`Added ${product.name} to wishlist`);
     }
  
     if (onWishlistToggle) {
-      onWishlistToggle(product.id, !isInWishlist);
+onWishlistToggle(product.id, !inWishlist);
     }
   };
 
@@ -83,7 +83,7 @@ className="product-card bg-white rounded-sm shadow-sm hover:shadow-lg transition
               <ApperIcon 
                 name="Heart" 
                 size={16} 
-                className={isInWishlist ? "text-error fill-error" : "text-charcoal"}
+className={inWishlist ? "text-error fill-error" : "text-charcoal"}
               />
             </button>
           </div>
