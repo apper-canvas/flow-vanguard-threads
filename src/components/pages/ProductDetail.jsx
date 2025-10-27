@@ -7,27 +7,34 @@ import Button from "@/components/atoms/Button";
 import Badge from "@/components/atoms/Badge";
 import SizeSelector from "@/components/molecules/SizeSelector";
 import ProductCard from "@/components/molecules/ProductCard";
+import ReviewStats from "@/components/molecules/ReviewStats";
+import ReviewForm from "@/components/molecules/ReviewForm";
+import ReviewList from "@/components/molecules/ReviewList";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import { getProductById, getProducts } from "@/services/api/productService";
 import { addToCart } from "@/services/api/cartService";
 import { isInWishlist as checkWishlist, addToWishlist, removeFromWishlist } from "@/services/api/wishlistService";
+import { getReviewStats } from "@/services/api/reviewService";
 const ProductDetail = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [product, setProduct] = useState(null)
   const [relatedProducts, setRelatedProducts] = useState([])
-  const [loading, setLoading] = useState(true)
+const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   
   const [selectedImage, setSelectedImage] = useState(0)
   const [selectedSize, setSelectedSize] = useState("")
   const [selectedColor, setSelectedColor] = useState("")
-const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1)
   const [isInWishlist, setIsInWishlist] = useState(false)
+  const [reviewStats, setReviewStats] = useState(null)
+  const [showReviewForm, setShowReviewForm] = useState(false)
 useEffect(() => {
     loadProduct()
     loadWishlistState()
+    loadReviewStats()
   }, [id])
 
   const loadWishlistState = () => {
@@ -44,7 +51,7 @@ useEffect(() => {
     }
   }
 
-  const loadProduct = async () => {
+const loadProduct = async () => {
     try {
       setLoading(true)
       setError(null)
@@ -67,6 +74,27 @@ useEffect(() => {
       setError("Product not found or failed to load.")
     } finally {
       setLoading(false)
+    }
+  }
+
+  const loadReviewStats = async () => {
+    try {
+      const stats = await getReviewStats(parseInt(id))
+      setReviewStats(stats)
+    } catch (error) {
+      console.error("Failed to load review stats:", error)
+    }
+  }
+
+  const handleReviewSubmitted = () => {
+    loadReviewStats()
+    setShowReviewForm(false)
+  }
+
+  const handleFilterByRating = (rating) => {
+    const reviewsSection = document.getElementById("reviews-section")
+    if (reviewsSection) {
+      reviewsSection.scrollIntoView({ behavior: "smooth" })
     }
   }
 
@@ -227,7 +255,15 @@ const handleAddToCart = () => {
               </div>
               
               <div className="flex items-center gap-4 mb-4">
-                <div className="flex items-center gap-2">
+<button
+                  onClick={() => {
+                    const reviewsSection = document.getElementById("reviews-section")
+                    if (reviewsSection) {
+                      reviewsSection.scrollIntoView({ behavior: "smooth" })
+                    }
+                  }}
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                >
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
                       <ApperIcon 
@@ -238,10 +274,10 @@ const handleAddToCart = () => {
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-medium-gray">
+                  <span className="text-sm text-medium-gray underline">
                     {product.rating} ({product.reviewCount} reviews)
                   </span>
-                </div>
+                </button>
                 
                 {!product.inStock && (
                   <Badge variant="error">Out of Stock</Badge>
@@ -383,9 +419,51 @@ const handleAddToCart = () => {
           </motion.div>
         </div>
 
+{/* Reviews Section */}
+        <section id="reviews-section" className="scroll-mt-8">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl lg:text-3xl font-display font-bold text-charcoal">
+              Customer Reviews
+            </h2>
+            <Button
+              variant="outline"
+              onClick={() => setShowReviewForm(!showReviewForm)}
+            >
+              <ApperIcon name="Plus" size={16} />
+              Write a Review
+            </Button>
+          </div>
+
+          {/* Review Statistics */}
+          {reviewStats && (
+            <div className="mb-6">
+              <ReviewStats 
+                stats={reviewStats} 
+                onFilterByRating={handleFilterByRating}
+              />
+            </div>
+          )}
+
+          {/* Review Form */}
+          {showReviewForm && (
+            <div className="mb-6">
+              <ReviewForm 
+                productId={parseInt(id)}
+                onReviewSubmitted={handleReviewSubmitted}
+              />
+            </div>
+          )}
+
+          {/* Review List */}
+          <ReviewList 
+            productId={parseInt(id)}
+            onFilterChange={() => {}}
+          />
+        </section>
+
         {/* Related Products */}
         {relatedProducts.length > 0 && (
-          <section>
+          <section className="mt-12">
             <h2 className="text-2xl lg:text-3xl font-display font-bold text-charcoal mb-8">
               You might also like
             </h2>

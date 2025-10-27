@@ -13,6 +13,7 @@ export const getProductById = async (id) => {
   if (!product) {
     throw new Error("Product not found")
   }
+  // Return product with review data that will be loaded separately
   return { ...product }
 }
 

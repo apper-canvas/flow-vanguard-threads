@@ -1,0 +1,222 @@
+[
+  {
+    "Id": 1,
+    "productId": 1,
+    "userId": 101,
+    "userName": "Sarah Mitchell",
+    "rating": 5,
+    "comment": "Absolutely love this shirt! The fabric quality is outstanding and the fit is perfect. I'm 5'8\" and ordered a medium - fits true to size. The color is exactly as shown in the pictures. Highly recommend!",
+    "verifiedPurchase": true,
+    "helpfulCount": 24,
+    "createdAt": "2024-02-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "productId": 1,
+    "userId": 102,
+    "userName": "Michael Chen",
+    "rating": 4,
+    "comment": "Great quality shirt, very comfortable. Only giving 4 stars because it wrinkles easily and needs ironing after every wash. Otherwise perfect for casual wear.",
+    "verifiedPurchase": true,
+    "helpfulCount": 18,
+    "createdAt": "2024-02-10T14:20:00Z"
+  },
+  {
+    "Id": 3,
+    "productId": 1,
+    "userId": 103,
+    "userName": "Emma Rodriguez",
+    "rating": 5,
+    "comment": "This is my third purchase from this brand and they never disappoint. The attention to detail is incredible. Love the subtle texture in the fabric.",
+    "verifiedPurchase": true,
+    "helpfulCount": 15,
+    "createdAt": "2024-02-08T09:45:00Z"
+  },
+  {
+    "Id": 4,
+    "productId": 1,
+    "userId": 104,
+    "userName": "James Wilson",
+    "rating": 3,
+    "comment": "Good shirt but runs a bit small. I usually wear large but had to exchange for XL. Quality is decent for the price.",
+    "verifiedPurchase": true,
+    "helpfulCount": 12,
+    "createdAt": "2024-02-05T16:15:00Z"
+  },
+  {
+    "Id": 5,
+    "productId": 2,
+    "userId": 105,
+    "userName": "Lisa Anderson",
+    "rating": 5,
+    "comment": "These pants are amazing! Super comfortable, great stretch, and they look professional enough for the office. The length is perfect and they don't bag at the knees.",
+    "verifiedPurchase": true,
+    "helpfulCount": 31,
+    "createdAt": "2024-02-18T11:00:00Z"
+  },
+  {
+    "Id": 6,
+    "productId": 2,
+    "userId": 106,
+    "userName": "David Thompson",
+    "rating": 4,
+    "comment": "Very comfortable pants with a modern fit. Pockets are well-placed and functional. Would have given 5 stars but the waistband could be a bit more comfortable.",
+    "verifiedPurchase": true,
+    "helpfulCount": 22,
+    "createdAt": "2024-02-12T13:30:00Z"
+  },
+  {
+    "Id": 7,
+    "productId": 2,
+    "userId": 107,
+    "userName": "Rachel Green",
+    "rating": 5,
+    "comment": "Perfect fit! I'm so happy with these pants. They're versatile enough to dress up or down, and the quality is exceptional.",
+    "verifiedPurchase": true,
+    "helpfulCount": 19,
+    "createdAt": "2024-02-09T15:45:00Z"
+  },
+  {
+    "Id": 8,
+    "productId": 3,
+    "userId": 108,
+    "userName": "Tom Harris",
+    "rating": 5,
+    "comment": "This jacket is worth every penny. The craftsmanship is top-notch, and it's incredibly warm without being bulky. Love all the pockets too!",
+    "verifiedPurchase": true,
+    "helpfulCount": 45,
+    "createdAt": "2024-01-28T10:15:00Z"
+  },
+  {
+    "Id": 9,
+    "productId": 3,
+    "userId": 109,
+    "userName": "Jennifer Lee",
+    "rating": 4,
+    "comment": "Great jacket overall. Very warm and stylish. The only downside is it's a bit heavy, but that's expected for the warmth it provides.",
+    "verifiedPurchase": true,
+    "helpfulCount": 28,
+    "createdAt": "2024-01-25T12:00:00Z"
+  },
+  {
+    "Id": 10,
+    "productId": 3,
+    "userId": 110,
+    "userName": "Chris Martinez",
+    "rating": 5,
+    "comment": "Excellent winter jacket. Keeps me warm in freezing temperatures. The fit is perfect and the quality is outstanding.",
+    "verifiedPurchase": true,
+    "helpfulCount": 34,
+    "createdAt": "2024-01-20T09:30:00Z"
+  },
+  {
+    "Id": 11,
+    "productId": 4,
+    "userId": 111,
+    "userName": "Amanda White",
+    "rating": 5,
+    "comment": "Beautiful dress! The fabric drapes perfectly and the color is gorgeous. Received so many compliments when I wore it to a wedding.",
+    "verifiedPurchase": true,
+    "helpfulCount": 27,
+    "createdAt": "2024-02-14T14:20:00Z"
+  },
+  {
+    "Id": 12,
+    "productId": 4,
+    "userId": 112,
+    "userName": "Kevin Brown",
+    "rating": 4,
+    "comment": "Bought this as a gift for my wife and she loves it. The quality is excellent and it fits perfectly. Runs true to size.",
+    "verifiedPurchase": true,
+    "helpfulCount": 16,
+    "createdAt": "2024-02-11T11:45:00Z"
+  },
+  {
+    "Id": 13,
+    "productId": 5,
+    "userId": 113,
+    "userName": "Nicole Taylor",
+    "rating": 5,
+    "comment": "This belt is exactly what I was looking for. High quality leather, classic design, and the buckle is sturdy. Goes with everything!",
+    "verifiedPurchase": true,
+    "helpfulCount": 21,
+    "createdAt": "2024-02-16T10:00:00Z"
+  },
+  {
+    "Id": 14,
+    "productId": 5,
+    "userId": 114,
+    "userName": "Ryan Johnson",
+    "rating": 4,
+    "comment": "Good quality belt for the price. Leather feels genuine and the stitching is solid. Would recommend.",
+    "verifiedPurchase": true,
+    "helpfulCount": 14,
+    "createdAt": "2024-02-13T15:30:00Z"
+  },
+  {
+    "Id": 15,
+    "productId": 6,
+    "userId": 115,
+    "userName": "Sophia Davis",
+    "rating": 5,
+    "comment": "These sneakers are incredibly comfortable! I can walk all day without any discomfort. The style is versatile and goes with everything.",
+    "verifiedPurchase": true,
+    "helpfulCount": 38,
+    "createdAt": "2024-02-17T09:15:00Z"
+  },
+  {
+    "Id": 16,
+    "productId": 6,
+    "userId": 116,
+    "userName": "Daniel Miller",
+    "rating": 5,
+    "comment": "Best sneakers I've owned. The cushioning is perfect and they look great. Worth every dollar.",
+    "verifiedPurchase": true,
+    "helpfulCount": 32,
+    "createdAt": "2024-02-14T13:00:00Z"
+  },
+  {
+    "Id": 17,
+    "productId": 6,
+    "userId": 117,
+    "userName": "Olivia Garcia",
+    "rating": 4,
+    "comment": "Very comfortable sneakers with great support. Only giving 4 stars because they run slightly narrow, but overall excellent quality.",
+    "verifiedPurchase": true,
+    "helpfulCount": 25,
+    "createdAt": "2024-02-10T11:30:00Z"
+  },
+  {
+    "Id": 18,
+    "productId": 1,
+    "userId": 118,
+    "userName": "Andrew Wilson",
+    "rating": 2,
+    "comment": "Disappointed with the quality. The shirt started pilling after just two washes. Expected better for the price.",
+    "verifiedPurchase": true,
+    "helpfulCount": 8,
+    "createdAt": "2024-02-03T14:45:00Z"
+  },
+  {
+    "Id": 19,
+    "productId": 2,
+    "userId": 119,
+    "userName": "Maria Rodriguez",
+    "rating": 3,
+    "comment": "Pants are okay but not great. The fit is strange - tight in the waist but loose in the legs. Might work better for different body types.",
+    "verifiedPurchase": false,
+    "helpfulCount": 6,
+    "createdAt": "2024-02-07T16:20:00Z"
+  },
+  {
+    "Id": 20,
+    "productId": 3,
+    "userId": 120,
+    "userName": "Brandon Lee",
+    "rating": 1,
+    "comment": "Jacket arrived with a broken zipper. Quality control seems lacking. Returning for a refund.",
+    "verifiedPurchase": true,
+    "helpfulCount": 4,
+    "createdAt": "2024-01-30T10:30:00Z"
+  }
+]
